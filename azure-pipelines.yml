@@ -23,3 +23,8 @@ steps:
     command: 'build'
     arguments: '--configuration $(buildConfiguration)'
   displayName: 'build --configuration $(buildConfiguration)'
+- task: DotNetCoreCLI@0
+  inputs:
+    command: 'test'
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
