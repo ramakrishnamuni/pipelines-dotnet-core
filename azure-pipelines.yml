@@ -39,4 +39,9 @@ steps:
   inputs:
    targetPath: $(Build.ArtifactStagingDirectory)
    artifactName: 'DemoWebSite'
-    
+- task: DownloadBuildArtifacts@1
+  inputs:
+   buildType: 'current'
+   downloadType: 'single'
+   artifactName: 'DemoWebSite'
+   downloadPath: '$(System.ArtifactsDirectory)'
